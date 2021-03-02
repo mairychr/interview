@@ -14,4 +14,5 @@ echo "asdasdasdasAAAAAA";
 //    } else {
 //        echo json_encode(['message' => 'user does not exists', 'data' => 12]);
 //    }
+exit();
 ?>
