@@ -50,7 +50,7 @@
         </div>
     </div>
     <div id="registration-form">
-        <form class="form" action="" method="post">
+        <div class="form">
             <p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis sagittis
                 sem, id
                 eleifend libero maximus elementum. Aliquam at interdum ex. Fusce ut dui auctor, vulputate arcu et,
@@ -72,7 +72,7 @@
             <input type="password" class="login-input" name="password_rep" placeholder="Password" required>
             <button name="submit" value="Sign Up" class="login-button" onclick="validate()"></button>
             <p class="login_p"><a href="login.php">Έχετε ήδη λογαριασμό; Επιστροφή στην σελίδα σύνδεσης</a></p>
-        </form>
+        </div>
     </div>
     <?php
     //    }

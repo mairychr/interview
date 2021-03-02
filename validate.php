@@ -3,7 +3,8 @@
 
 if (isset($_GET['email'])) { //change isSet to isset (it will not make any difference)
     $email = ($_GET['email']); //escape the string
-
+    var_dump($_GET);
+    return json_encode(['message' => 'user exists', 'data' => 11]);
     $query = "SELECT email FROM signup WHERE email='$email'";
     $result = mysqli_query($con, $query);
     $rows = mysqli_num_rows($result);
