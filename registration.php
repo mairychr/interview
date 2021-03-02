@@ -24,36 +24,39 @@
 <div class="container">
     <?php
     require('db.php');
-    // When form submitted, insert values into the database.
-    if (isset($_REQUEST['username'])) {
-        // removes backslashes
-        include("request_user.php");
-        include("user_validation.php");
-        $user = null;
-        if (!$subscribed) {
-            $query = "INSERT into `signup` (username, email, password, password_rep)
-                        VALUES ('$username', '$email' , '" . md5($password) . "', '" . md5($password) . "')";
-            $user = mysqli_query($con, $query);
-        }
-        if ($user) {
-            echo "<div class='form'>
-                            <p class='message-text'>You are registered successfully.</p><br/>
-                            <a class='login_p' href='login.php'>Click here to Login.</a>
-                            </div>";
-        } else {
-            echo "<div class='form'>
-                            <p class='message-text'>The email already exists!</p><br/>
-                            <a class='login_p' href='registration.php'>Click here to registration again.</a> 
-                            </div>";
-        }
-    } else {
-
-        ?>
+    ?>
+    <!--    // When form submitted, insert values into the database.-->
+    <!--    if (isset($_REQUEST['username'])) {-->
+    <!--        // removes backslashes-->
+    <!--        include("request_user.php");-->
+    <!--        include("user_validation.php");-->
+    <!--        $user = null;-->
+    <!--        if (!$subscribed) {-->
+    <!--            $query = "INSERT into `signup` (username, email, password, password_rep)-->
+    <!--                        VALUES ('$username', '$email' , '" . md5($password) . "', '" . md5($password) . "')";-->
+    <!--            $user = mysqli_query($con, $query);-->
+    <!--        }-->
+    <!--    } else {-->
+    <!---->
+    <!--        ?>-->
+    <div id="success-registration" hidden>
+        <div class='form'>
+            <p class='message-text'>You are registered successfully.</p><br/>
+            <a class='login_p' href='login.php'>Click here to Login.</a>
+        </div>
+        <div class='form'>
+            <p class='message-text'>The email already exists!</p><br/>
+            <a class='login_p' href='registration.php'>Click here to registration again.</a>
+        </div>
+    </div>
+    <div id="registration-form">
         <form class="form" action="" method="post">
-            <p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis sagittis sem, id
+            <p class="reg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis sagittis
+                sem, id
                 eleifend libero maximus elementum. Aliquam at interdum ex. Fusce ut dui auctor, vulputate arcu et,
                 interdum
-                lorem. Aliquam consequat placerat risus in commodo. In consequat arcu id nisl lacinia facilisis. </p>
+                lorem. Aliquam consequat placerat risus in commodo. In consequat arcu id nisl lacinia
+                facilisis. </p>
             <p class="create_text">Δημιουργήστε έναν λογαριασμό!</p>
             <label><i class="fas fa-user"></i></label>
             <input type="text" class="login-input" name="username" placeholder="Username" required/>
@@ -61,33 +64,38 @@
                 <span> dis is wrong</span>
             </div> -->
             <label><i class="fas fa-user"></i></label>
-            <input type="email" class="login-input loginemail" name="email" placeholder=" Email Adress" required>
+            <input id="input-email" type="email" class="login-input loginemail" name="email" placeholder=" Email Adress"
+                   required>
             <label><i class="fas fa-unlock-alt"></i></label>
             <input type="password" class="login-input" name="password" placeholder="Password" required>
             <label><i class="fas fa-unlock-alt"></i></label>
             <input type="password" class="login-input" name="password_rep" placeholder="Password" required>
-            <input type="submit" name="submit" value="Sign Up" class="login-button">
+            <button name="submit" value="Sign Up" class="login-button" onclick="validate()"></button>
             <p class="login_p"><a href="login.php">Έχετε ήδη λογαριασμό; Επιστροφή στην σελίδα σύνδεσης</a></p>
         </form>
-        <?php
-    }
+    </div>
+    <?php
+    //    }
     ?>
 </div>
 <script type="text/javascript">
     function validate() {
+        var email = document.getElementById('input-email').innerText
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 // Typical action to be performed when the document is ready:
-                document.getElementById("demo").innerHTML = xhttp.responseText;
-                //todo::goto next page
-            } else if (this.status == 400) {
-
+                document.getElementById("success-registration").hidden = false;
+                document.getElementById("registration-form").hidden = true;
+                console.log('you did it!!');
+                // window.location.href = '';
+            } else {
+                console.log(this);
+                console.log('damn');
             }
         }
-    }
-    xhttp.open("GET", "filename", true);
-    xhttp.send();
+        xhttp.open("GET", "validate.php", true);
+        xhttp.send("email=" + email);
     }
 </script>
 </body>
