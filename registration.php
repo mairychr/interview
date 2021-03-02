@@ -94,8 +94,8 @@
             }
         }
         let theEmail = document.getElementById('input-email').innerText
-        xhttp.open("GET", "validate.php?email=" + theEmail, true);
-        xhttp.send("email=" + email);
+        xhttp.open("GET", "validate.php?email1=" + theEmail, true);
+        xhttp.send("email2=" + theEmail);
     }
 </script>
 </body>
