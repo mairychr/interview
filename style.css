@@ -1,0 +1,268 @@
+body,p,h1,h2,h3,a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.container {
+    margin: 60px auto 10px;
+    text-align: center;
+}
+.topnav a {
+    color: #acacac;
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.topnav .icon {
+    display: none;
+  }
+.menu_hr {
+    border: solid 1px #f6f6f6;
+}
+.reg-text {
+    width: 25%;
+    margin: 0 auto;
+    text-align: left;
+    color: #acacac;
+    font-size: 16px;
+}
+.create_text {
+    color: #acacac;
+    font-weight: 500;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.login-input {
+    display: block;
+    margin: 10px auto;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border: solid 1px #e1e1e1;
+    background: #f6f6f6;
+    width: 24%;
+}
+.fa {
+    display: block !important;
+}
+.login-button {
+    margin: 30px 0 0;
+    padding: 5px 30px;
+    border-radius: 5px;
+    background: #35c594;
+    border: solid 1px #35c594;
+    color: #ffffff;
+    cursor: pointer;
+}
+.login_p a {
+    font-size: 14px;
+    color: #acacac;
+    text-decoration: none;
+}
+.login_p {
+    font-size: 14px;
+    color: #acacac;
+    text-decoration: none;
+}
+input:focus {
+    outline: none;
+}
+.login-button:hover {
+    background: #94f3d3;
+    color: #278b6a;
+    transition: 0.2s;
+    border: solid 1px #94f3d3;
+    font-weight: 500;
+}
+.fa-user,
+.fa-unlock-alt {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    display: inline-block;
+    position: absolute;
+    left: 39%;
+    margin: 12px 0 0;
+    color: #757575;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+    padding: 12px 35px;
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box;
+}
+.login_container .fa-user {
+    margin: 0;
+    position: relative;
+}
+.login_container {
+    width: 23%;
+    display: flex;
+    margin: 20px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.login_container .login_p {
+    margin: 0 auto;
+    align-self: center;
+}
+.message-text {
+    margin: 10px auto;
+    text-align: center;
+    color: #acacac;
+}
+
+
+@media (max-width:2560px) {
+    input[type=text], input[type=password], input[type=email] {
+        padding: 12px 45px;
+    }
+}
+@media (max-width: 1920px) {
+    input[type=text], input[type=password], input[type=email] {
+        padding: 12px 35px;
+    }
+}
+@media (max-width:1175px) {
+    .reg-text {
+        width: 35%;
+    }
+    .login-input {
+        width: 35%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 34%;
+    }
+    .login_container {
+        width: 35%;
+    }
+}
+@media (max-width:1000px) {
+    .reg-text {
+        width: 38%;
+    }
+    .login-input {
+        width: 38%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 33%;
+    }
+    .login_container {
+        width: 38%;
+    }
+}
+@media (max-width: 850px) {
+    .reg-text {
+        width: 45%;
+        padding: 0 20px;
+    }
+    .login-input {
+        width: 45%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 30%;
+    }
+    .login_container {
+        width: 45%;
+    }
+}
+@media (max-width:750px) {
+    .topnav a {
+        font-size: 14px;
+        display: none;
+    }
+    .reg-text {
+        font-size: 14px;
+    }
+    .create_text {
+        font-size: 14px;
+    }
+    .login_p a {
+        font-size: 13px;
+    }
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: relative;
+        right: 0;
+        top: 0;
+        float: none;
+    }
+    .topnav.responsive a {
+        float: left;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 5px 0;
+    }
+    .topnav a.icon {
+        float: none;
+        display: block;
+      }
+    .topnav.responsive a:first-child { 
+        margin-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .reg-text {
+        width: 55%;
+    }
+    .login-input {
+        width: 55%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 26%;
+    }
+    .login_container {
+        width: 55%;
+    }
+}
+@media (max-width: 500px) {
+    .reg-text {
+        width: 70%;
+    }
+    .login-input {
+        width: 70%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 20%;
+    }
+    .login_container {
+        width: 70%;
+    }
+}
+@media (max-width: 420px) {
+    .container {
+        margin: 40px auto 10px;
+    }
+    .reg-text {
+        width: 80%;
+    }
+    .login-input {
+        width: 80%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 15%;
+    }
+    .login_p {
+        width: 50%;
+        margin: 10px auto;
+    }
+    .login_container {
+        width: 80%;
+    }
+}
+@media (max-width: 320px) {
+    .reg-text {
+        width: 90%;
+    }
+    .login-input {
+        width: 90%;
+    }
+    .fa-user, .fa-unlock-alt {
+        left: 11%;
+    }
+    .login_container {
+        width: 90%;
+    }
+}
