@@ -81,35 +81,21 @@
 <script type="text/javascript">
     function validate() {
         var email = document.getElementById('input-email').innerText
-        // var xhttp = new XMLHttpRequest();
-        // xhttp.onreadystatechange = function () {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         // Typical action to be performed when the document is ready:
-        //         document.getElementById("success-registration").hidden = false;
-        //         document.getElementById("registration-form").hidden = true;
-        //         console.log('you did it!!');
-        //         // window.location.href = '';
-        //     } else {
-        //         console.log(this);
-        //         console.log('damn');
-        //     }
-        // }
-        // xhttp.open("GET", "validate.php", true);
-        // xhttp.send();
-
-        var data = new FormData();
-        data.append('email', email);
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'somewhere', true);
-        xhr.onload = function () {
-            // do something to response
-            document.getElementById("success-registration").hidden = false;
-            document.getElementById("registration-form").hidden = true;
-            console.log('you did it!!');
-        };
-        xhr.send(data);
-
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+                document.getElementById("success-registration").hidden = false;
+                document.getElementById("registration-form").hidden = true;
+                console.log('you did it!!');
+                // window.location.href = '';
+            } else {
+                console.log(this);
+                console.log('damn');
+            }
+        }
+        xhttp.open("GET", "validate.php", true);
+        xhttp.send("email=" + email);
     }
 </script>
 </body>
