@@ -29,20 +29,6 @@
                 // removes backslashes
                 include("request_user.php");  
                 include("user_validation.php");
-                if($emailError){
-                    ?>
-                     <script type="text/javascript">
-                        function emailError(){
-                            console.log('asdfasdf');
-                            document.getElementById('emailError').hidden = false;
-                        }
-                        emailError()
-                    </script>
-                    <?php
-                }else{
-                    echo " you suck";
-                    die;
-                    $user = null;
                     if (!$subscribed) {
                         $query  = "INSERT into `signup` (username, email, password, password_rep)
                         VALUES ('$username', '$email' , '" . md5($password) . "', '" . md5($password). "')";
@@ -68,9 +54,9 @@
                 <p class="create_text">Δημιουργήστε έναν λογαριασμό!</p>
                 <label><i class="fas fa-user"></i></label>
                 <input type="text" class="login-input" name="username" placeholder="Username" required />
-                <div id="emailError" class='error-email' hidden>
+                <!-- <div id="emailError" class='error-email' hidden>
                     <span> dis is wrong</span>
-                </div>
+                </div> -->
                 <label><i class="fas fa-user"></i></label>
                 <input type="email" class="login-input loginemail" name="email" placeholder=" Email Adress" required>
                 <label><i class="fas fa-unlock-alt"></i></label>
