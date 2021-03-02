@@ -80,7 +80,6 @@
 </div>
 <script type="text/javascript">
     function validate() {
-        var email = document.getElementById('input-email').innerText
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -94,7 +93,8 @@
                 console.log('damn');
             }
         }
-        xhttp.open("GET", "validate.php", true);
+        let theEmail = document.getElementById('input-email').innerText
+        xhttp.open("GET", "validate.php?email=" + theEmail, true);
         xhttp.send("email=" + email);
     }
 </script>
