@@ -1,9 +1,9 @@
 <?php
 //require('request_user.php');
-if (isset($_REQUEST["email"])) { //change isSet to isset (it will not make any difference)
-    $email = ($_POST['email']); //escape the string
+$email_a = isset($_POST['email1']) ? $_POST('email1') : 'bluh_a'; //escape the string
+$email_b = isset($_POST['email2']) ? $_POST('email2') : 'bluh_b'; //escape the string
 //    var_dump($_POST);
-    return json_encode(['message' => 'user exists', 'data' => 11]);
+return json_encode(['message' => 'user exists', 'data' => [$email_a, $email_b]]);
 //    $query = "SELECT email FROM signup WHERE email='$email'";
 //    $result = mysqli_query($con, $query);
 //    $rows = mysqli_num_rows($result);
@@ -13,6 +13,4 @@ if (isset($_REQUEST["email"])) { //change isSet to isset (it will not make any d
 //    } else {
 //        echo json_encode(['message' => 'user does not exists', 'data' => 12]);
 //    }
-}
-return json_encode(['message' => 'user exists', 'data' => 12]);
 ?>
