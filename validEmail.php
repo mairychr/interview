@@ -1,7 +1,7 @@
 <?php
 require('db.php');
 $email = isset($_POST['email1']) ? $_POST('email1') : null;
-if ($email_a) {
+if ($email) {
     $query = "SELECT email FROM signup WHERE email='$email'";
     $result = mysqli_query($con, $query);
     $rows = mysqli_num_rows($result);
